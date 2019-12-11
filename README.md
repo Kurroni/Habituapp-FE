@@ -1,68 +1,190 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Habituapp
 
-## Available Scripts
 
-In the project directory, you can run:
+## Description
+"I never could have done what I have done without the habits of punctuality, order and diligence, without the determination to concentrate myself on the subject at a time." - Charles Dickens
 
-### `npm start`
+It's easy to get motivated but it's hard to stay disciplined.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Habituapp is a perfect tool that helps you to build habits that stick. To create behavior chain that is harder to break and will lead you to achieve your personal long-term goals.
+Micro gains, small wins. That's the idea.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+I built it by myself with React, Node.js and MongoDB as a final project for the Ironhack’s bootcamp.
 
-### `npm test`
+You create your small daily habits to learn consistent routines. Then you track them and got your every day to-do-list. All you have to do is maintaine the Streak - the longer one, the better.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The next features to add to the tool will be some interaction between users and option to motivate each other.
 
-### `npm run build`
+Habituapp is a great way to stay disciplined and commited when you start a new habit.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+[Link Deploy](https://habituapp.herokuapp.com/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## User Stories
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+-  **404:** As an anon/user I can see a 404 page if I try to reach a page that does not exist so that I know it's my fault
+-  **Signup:** As an anon I can sign up in the platform so that I can start creating or joining team
+-  **Login:** As a user I can login to the platform so that I can see my profileś features
+-  **Logout:** As a user I can logout from the platform so no one else can use it
+-  **Create New Habit** As a user I want to create new habit
+-  **See my habits** As a user I can see my habits as a daily to-do list, habits can be marked as DONE
+-  **Edit my habits** As a user I can edit my habits to update them due to my learnings
+-  **See a habit with its streak** As a user I want to see a specific habit and my Streak in keeping it, to mesure my progress and to keep motivated
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Backlog
+- Make habits option: weekly, monthly.
+- Add categories: e.i. mind, health, family, sport, diet, self-development etc.
+- Other users as a supporters with comment option
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Client
 
-### Code Splitting
+## Routes
+| Path | Component | Permissions | Behavior | 
+|------|--------|--| -------|
+ `/signup` | HomePageComponent | public | Sign up form (navigates to NewHabit)and link to login |
+| `/login` | LoginPageComponent | anon only | login form, link to signup navigating to HomePage, navigate to TodayPage after login |
+| `/today` | TodayPageComponent | user only | homepage |
+| `/add-habit` | AddHabitPageComponent | user only | CreateHabitPage - form to add the new habit by title and navigate to TodayPage after creation |
+| `/habits/edit/:id` | AddHabitPageComponent | user only | EditForm for the habit by title and navigate to TodayPage after save |
+| `/habits/:id` | TodayPageComponent | user only | view of the single habit, link to EditForm |
+| `**` | NotFoundPageComponent | public | 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### Analyzing the Bundle Size
+## Components
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
+- Signup component
+  - Input: user: any
+  - Output: user object
+  
+- Login component
+  - Input: user: any
+  - Output: user object
+  
+-Navbar component
+  - Input: user object
+  - Output: user object
+  
+- NoHabit component
+  - Input: empty
+  - Output: empty
+  
+- CreateNewHabit component
+  - Input: habit: any
+  - Output: habit object
+  
+- EditHabit component
+  - Input: habit: any
+  - Output: habit object
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+- Today component
+  - Input: user object
+  - Output: user object
+  
+- CardHabits component
+  - Input: user object
+  - Output: habit object
+  
+- DetailHabit component
+  - Input: habit id
+  - Output: habit object
 
-### Advanced Configuration
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+## Services
 
-### Deployment
+- Auth Service
+  - auth.login(user)
+  - auth.signup(user)
+  - auth.logout()
+  - auth.me()
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+- User Service
+  - user.getOne(id)
+  - user.update(id, {habits})
+  
+- Habit Service
+  - habit.createOne(data)
+  - habit.imageUpload(file)
+  *(- habit.getAll()         //by user-id)
+  - habit.getOne(id)
+  - habit.updateOne(id, data) 
+  - habit.deleteOne(id)
 
-### `npm run build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+# Server
+
+## Models
+```
+user={
+  password: String,
+  username: {
+    type:String,
+    required: true,
+    unique: true
+  },
+  email: {
+    type:String,
+    required: true,
+    unique: true
+  },
+  habits: [{type: Schema.Types.ObjectId, ref: 'Habit'}],
+  }
+  
+habit={
+  img: String,
+  title: String,
+  description: String,
+  days: [{date:Date, done: Boolean}]
+}
+
+```
+
+## Data structure
+
+### Front-end routes
+
+- ('/signup') : signup page     // /auth/signup
+- ('/login') : login page
+- ('/today') : home page if loged in
+- ('/add-habit') : form page to create new habit
+- ('/habits/:id') : Single habit page with statistics
+- ('/habits/edit/:id') : Edit single habit page
+
+## API Endpoints (backend routes)
+
+## API Endpoints (backend routes)
+
+| HTTP Method | URL                         | Request Body                 | Success status | Error Status | Description                                                  |
+| ----------- | --------------------------- | ---------------------------- | -------------- | ------------ | ------------------------------------------------------------ |
+| POST        | `/auth/signup`                | {username, email, password}      | 201            | 404          | Checks if fields not empty (422) and user not exists (409), then create user with encrypted password, and store user in session |
+| POST        | `/auth/login`                 | {username, password}         | 200            | 401          | Checks if fields not empty (422), if user exists (404), and if password matches (404), then stores user in session |
+| POST        | `/auth/logout`                | (empty)                      | 204            | 400          | Logs out the user                                            |
+| GET         | `/habits`                |                              |                | 400          | Show all user's habits                                         |
+| GET         | `/habits/:id`            | {id}                         |                |              | Show specific tournament                                     |
+| POST        | `/habits` | {}                           | 201            | 400          | Create and save a new habit                             |
+| PUT         | `/habits/edit/:id`       | {image, title, description}           | 200            | 400          | edit tournament                                              |
+| DELETE      | `/habits/delete/:id`     | {id}                         | 201            | 400          | delete habit                                            |
+
+<br>
+
+
+## Links
+
+
+### Trello
+https://trello.com/b/Z14IYCXN/habituapp
+
+### Git
+URls for the project repo and deploy
+[Link Repo Server]
+[Link Repo Client]
+[Link Deploy]
+
+
+### Slides
+URls for the project presentation (slides)
