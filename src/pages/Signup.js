@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import { withAuth } from '../lib/AuthProvider';
 
 class Signup extends Component {
-  state = { username: '', password: '' };
+  state = { username: '', email:'', password: '' };
 
   handleFormSubmit = event => {
     event.preventDefault();
-    const { username, password } = this.state;
+    const { username, email, password } = this.state;
     //  console.log('Signup -> form submit', { username, password });
-    this.props.signup({ username, password }); // props.signup is Provided by withAuth() and Context API
+    this.props.signup({ username, email, password }); // props.signup is Provided by withAuth() and Context API
   };
 
   handleChange = event => {

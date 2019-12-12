@@ -25,6 +25,6 @@ class User {
 
 }
 
-const axiosRequestFunctions = new User();
+const userService = new User();
 
-export default axiosRequestFunctions;
+export default userService;
