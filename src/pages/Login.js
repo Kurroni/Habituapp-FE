@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withAuth } from '../lib/AuthProvider';
+import { Link } from 'react-router-dom';
 
 class Login extends Component {
   state = { username: '', password: '' };
@@ -40,6 +41,9 @@ class Login extends Component {
 
           <input type="submit" value="Login" />
         </form>
+
+        <p>No account?</p>
+        <Link to={'/signup'}> Sign Up</Link>
       </div>
     );
   }

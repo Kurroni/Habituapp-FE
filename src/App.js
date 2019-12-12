@@ -8,6 +8,7 @@ import Navbar from './components/Navbar';
 
 import AnonRoute from './components/AnonRoute';
 import PrivateRoute from './components/PrivateRoute';
+import AddHabit from './pages/Add-habit';
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
           <AnonRoute exact path="/signup" component={Signup} />
           <AnonRoute exact path="/login" component={Login} />
           <PrivateRoute exact path="/private" component={Private} />
+          <AddHabit exact path="/add-habit" component={AddHabit}/>
         </Switch>
       </div>
     );
