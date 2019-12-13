@@ -8,13 +8,11 @@ class User {
     });
   }
 
-//   i probably dont need it as i ll use auth/me
-//   getOne(id) {
-//     const { id } = user;
-//     return this.user
-//       .post('/', {})
-//       .then(({ data }) => data);
-//   }
+  getOne(id) {
+    return this.user
+      .get(`/user/:${id}`)
+      .then(({ data }) => data);
+  }
 
   updateTheHabits(id, habitsIds) {
     const { username, password } = user;
