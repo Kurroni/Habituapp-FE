@@ -14,11 +14,12 @@ class Habit {
       .then(newHabit => newHabit.data); //DB response, habitObj but with ID
   }
 
-  //   getOne (id) {
-  //     return this.habit
-  //     .get('/habit/:id', id)  //what we send BE
-  //     .then(habitObj) //DB response, habitObj but with ID
-  //   }
+  getOne (id) {
+    return this.habit
+      .get('/:id', id)  //what we send BE
+      .then(habitObj => habitObj.data) //DB response, habitObj but with ID
+  }
+
   //   //this is doubled withupdateTheHabits in user-service??
   //   updateOne (id) {
   //     return this.habit

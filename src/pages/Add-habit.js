@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import cloudinaryService from "./../lib/cloudinary-service";
 import habitService from "./../lib/habit-service";
 
