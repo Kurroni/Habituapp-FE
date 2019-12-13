@@ -15,10 +15,16 @@ class User {
   }
 
   updateTheHabits(id, habitsId) {
-     return this.user
+    return this.user
       .put(`/user/${id}`, {habitsId: habitsId})
       .then(({ data }) => console.log(data));
-      }
+  }
+
+  showHabits(id) {
+    return this.user
+      .get(`/user/${id}`)
+      .then(({ data }) => data);
+  }
 }
 
 const userService = new User();

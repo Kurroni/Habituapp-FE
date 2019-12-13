@@ -20,7 +20,6 @@ class Habit {
       .then(habitObj => habitObj.data) //DB response, habitObj but with ID
   }
 
-  //   //this is doubled withupdateTheHabits in user-service??
   //   updateOne (id) {
   //     return this.habit
   //     .post('/habit/', habitObj)  //what we send BE
@@ -32,15 +31,6 @@ class Habit {
   //     .then(newHabit) //DB response, habitObj but with ID
   // }
 
-  // this for later for use with prepared form etc. in components
-  // .then((habitObj) => {
-  //     const newHabits = user.habits;
-  //     newHabits.push(habitObj._id);
-
-  //     User.updateTheHabits (user._id, newHabits)
-  //     .then((user) => redirect)
-
-  // })
 }
 
 const habitService = new Habit();

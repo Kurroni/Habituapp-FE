@@ -9,6 +9,8 @@ import Navbar from './components/Navbar';
 import AnonRoute from './components/AnonRoute';
 import PrivateRoute from './components/PrivateRoute';
 import AddHabit from './pages/Add-habit';
+import Showhabits from './pages/Today';
+
 
 class App extends Component {
   render() {
@@ -21,7 +23,8 @@ class App extends Component {
           <AnonRoute exact path="/signup" component={Signup} />
           <AnonRoute exact path="/login" component={Login} />
           <PrivateRoute exact path="/private" component={Private} />
-          <AddHabit exact path="/add-habit" component={AddHabit}/>
+          <PrivateRoute exact path="/add-habit" component={AddHabit}/>
+          <PrivateRoute exact path="/today" component={Showhabits}/>
         </Switch>
       </div>
     );
