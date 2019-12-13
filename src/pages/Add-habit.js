@@ -3,6 +3,7 @@ import { withAuth } from "../lib/AuthProvider";
 // import { Link } from "react-router-dom";
 import cloudinaryService from "./../lib/cloudinary-service";
 import habitService from "./../lib/habit-service";
+import userService from "../lib/user-service";
 
 class Addhabit extends Component {
   state = { img: "", title: "", description: "" };
@@ -10,9 +11,14 @@ class Addhabit extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     const { img, title, description } = this.state;
-    habitService.createOne({ img, title, description }).then(newHabit => {
+    habitService.createOne({ img, title, description })
+    .then(newHabit => {
       console.log(newHabit);
-    });
+      const userId = this.props.user._id
+      console.log(userId);
+      
+    userService.updateTheHabits(userId, newHabit._id)
+        });
   };
 
   handlePhotoChange = event => {

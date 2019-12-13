@@ -46,7 +46,7 @@ class Edithabit extends Component {
 
     return (
       <div>
-        <h1>Create a new habit</h1>
+        <h1>Edit the habit</h1>
 
         <img style={{ width: 200, height: 'auto'}} src={this.state.img} alt=""/>
         <form onSubmit={this.handleFormSubmit} encType="multipart/form-data">
