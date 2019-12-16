@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withAuth } from '../lib/AuthProvider';
 import { Link } from 'react-router-dom';
+import SignupBackground from './../img/Success.jpg'
 
 class Login extends Component {
   state = { username: '', password: '' };
@@ -21,30 +22,37 @@ class Login extends Component {
 
     return (
       <div>
+      <Link to="/signup">
+        {' '}
+        <button className="signup-btn">Signup</button>{' '}
+      </Link>
+      <div className="login-wrapper">
         <h1>Login</h1>
         <form onSubmit={this.handleFormSubmit}>
-          <label>Username:</label>
           <input
             type="text"
             name="username"
+            placeholder="Username"
             value={username}
             onChange={this.handleChange}
           />
 
-          <label>Password:</label>
           <input
             type="password"
             name="password"
+            placeholder="Password"
             value={password}
             onChange={this.handleChange}
           />
 
-          <input type="submit" value="Login" />
+          <input id="login-btn" type="submit" value="Login" />
         </form>
-
+        <div className="signup-link">
         <p>No account?</p>
         <Link to={'/signup'}> Sign Up</Link>
+        </div>
       </div>
+    </div>
     );
   }
 }

@@ -18,10 +18,10 @@ class Navbar extends Component {
         ) : (
           <div className="logo-nav">
           <img className="logo" src={logo} alt=""/>
-            <Link to="/login">
+            {/* <Link to="/login">
               {' '}
               <button className="login-btn">Login</button>{' '}
-            </Link>
+            </Link> */}
             {/* <br /> */}
             {/* <Link to="/signup">
               {' '}

@@ -21,16 +21,21 @@ class Signup extends Component {
   render() {
     const { username, email, password } = this.state;
     return (
-      <div className="signup-wrapper">
-        <h1>Join and start your new habit</h1>
-        <form onSubmit={this.handleFormSubmit}>
-          <input
+      <div>
+        <Link to="/login">
+          {' '}
+          <button className="login-btn">Login</button>{' '}
+        </Link>
+        <div className="signup-wrapper">
+         <h1>Join and start your new habit</h1>
+          <form onSubmit={this.handleFormSubmit}>
+            <input
             type="text"
             name="username"
             placeholder="Username"
             value={username}
             onChange={this.handleChange}
-          />
+            />
 
           <input
             type="email"
@@ -55,6 +60,7 @@ class Signup extends Component {
         <Link to={'/login'}>Login</Link>
         </div>
       </div>
+    </div>
     );
   }
 }
