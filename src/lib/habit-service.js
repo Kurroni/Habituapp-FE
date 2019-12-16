@@ -3,7 +3,7 @@ import axios from "axios";
 class Habit {
   constructor() {
     this.habit = axios.create({
-      baseURL: "http://localhost:5000/habits",
+      baseURL: process.env.REACT_APP_API_URL,
       withCredentials: true
     });
   }
