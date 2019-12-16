@@ -3,23 +3,37 @@ import { withAuth } from "../lib/AuthProvider";
 // import { Link } from "react-router-dom";
 import cloudinaryService from "./../lib/cloudinary-service";
 import habitService from "./../lib/habit-service";
+import userService from "./../lib/user-service"
 
 class Edithabit extends Component {
   constructor(props){
     super(props);
     this.state = {
-        img: this.props.theHabit.img,//shouldn't be req.params??
-        title: this.props.theHabit.title,
-        description: this.props.theHabit.description
+        img: '',
+        title: '',
+        description: ''
     }
+  }
+
+  componentDidMount(){
+    const habitId = this.props.match.params.id;
+    console.log(habitId);
+    
+    habitService.getOne(habitId)
+    .then((habitObj)=> {
+      console.log(habitObj);
+      
+      const {img, title, description} = habitObj;
+      this.setState({img, title, description})
+    })
   }
   
   handleFormSubmit = event => {
     event.preventDefault();
     const { img, title, description } = this.state;
-    const { _id } = this.props.theHabit;
+    const habitId = this.props.match.params.id;
 
-    habitService.updateOne({ img, title, description }).then(newHabit => {
+    habitService.updateOne(habitId, { img, title, description }).then(newHabit => {
       console.log(newHabit);
     });
   };

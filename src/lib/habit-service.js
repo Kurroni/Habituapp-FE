@@ -3,7 +3,7 @@ import axios from "axios";
 class Habit {
   constructor() {
     this.habit = axios.create({
-      baseURL: process.env.REACT_APP_API_URL,
+      baseURL: process.env.REACT_APP_API_URL +'/habits',
       withCredentials: true
     });
   }
@@ -16,13 +16,13 @@ class Habit {
 
   getOne (id) {
     return this.habit
-      .get('/:id', id)  //what we send BE
+      .get(`/${id}`)  //what we send BE
       .then(habitObj => habitObj.data) //DB response, habitObj but with ID
   }
 
   updateOne (id, habitObj) {
     return this.habit
-      .put('/:id', habitObj)  //what we send BE
+      .put(`/${id}`, habitObj)  //what we send BE
       .then(newHabit => newHabit.data) //DB response, habitObj but with ID
     }
   //   deleteOne (id) {

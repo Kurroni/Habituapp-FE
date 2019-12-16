@@ -37,8 +37,11 @@ class Showhabits extends Component {
               
                 <div key={habits._id} className='habit'>
                 <img src={habits.img} alt=""/>
-                  <h3>{habits.title}</h3>
-                  <p>{habits.description} </p>
+                <Link to={`/single-habit/${habits._id}`}>
+                   <h3>{habits.title}</h3>
+                   </Link>
+                  <input type="checkbox" checked/>
+                 {/* <p>{habits.description} </p> */}
                </div>
              
                     )})
