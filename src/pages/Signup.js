@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { withAuth } from '../lib/AuthProvider';
+import SignupBackground from './../img/Success.jpg'
 
 class Signup extends Component {
   state = { username: '', email:'', password: '' };
@@ -20,38 +21,39 @@ class Signup extends Component {
   render() {
     const { username, email, password } = this.state;
     return (
-      <div>
-        <h1>Sign Up</h1>
+      <div className="signup-wrapper">
+        <h1>Join and start your new habit</h1>
         <form onSubmit={this.handleFormSubmit}>
-          <label>Username:</label>
           <input
             type="text"
             name="username"
+            placeholder="Username"
             value={username}
             onChange={this.handleChange}
           />
 
-          <label>Email:</label>
           <input
             type="email"
             name="email"
+            placeholder="Email"
             value={email}
             onChange={this.handleChange}
           />
 
-          <label>Password:</label>
           <input
             type="password"
             name="password"
+            placeholder="Password"
             value={password}
             onChange={this.handleChange}
           />
 
-          <input type="submit" value="Signup" />
+          <input id="signup-btn" type="submit" value="Signup" />
         </form>
-
-        <p>Already have account?</p>
-        <Link to={'/login'}> Login</Link>
+        <div className="login-link">
+        <p>Already have an account?</p>
+        <Link to={'/login'}>Login</Link>
+        </div>
       </div>
     );
   }

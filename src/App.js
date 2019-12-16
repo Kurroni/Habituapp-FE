@@ -13,14 +13,15 @@ import Showhabits from './pages/Today';
 import EditHabit from './pages/Edit-habit';
 import SingleHabit from './pages/Single-habit';
 
+import "./App.css";
+
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Navbar />
-        <h1>Basic React Authentication</h1>
-
+        
         <Switch>
           <AnonRoute exact path="/signup" component={Signup} />
           <AnonRoute exact path="/login" component={Login} />
