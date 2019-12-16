@@ -10,6 +10,7 @@ import AnonRoute from './components/AnonRoute';
 import PrivateRoute from './components/PrivateRoute';
 import AddHabit from './pages/Add-habit';
 import Showhabits from './pages/Today';
+import EditHabit from './pages/Edit-habit';
 
 
 class App extends Component {
@@ -25,6 +26,7 @@ class App extends Component {
           <PrivateRoute exact path="/private" component={Private} />
           <PrivateRoute exact path="/add-habit" component={AddHabit}/>
           <PrivateRoute exact path="/today" component={Showhabits}/>
+          <PrivateRoute exact path="/edit-habit" component={EditHabit}/>
         </Switch>
       </div>
     );

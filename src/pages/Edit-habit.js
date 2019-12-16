@@ -8,7 +8,7 @@ class Edithabit extends Component {
   constructor(props){
     super(props);
     this.state = {
-        img: this.props.theHabit.img,
+        img: this.props.theHabit.img,//shouldn't be req.params??
         title: this.props.theHabit.title,
         description: this.props.theHabit.description
     }
@@ -19,7 +19,7 @@ class Edithabit extends Component {
     const { img, title, description } = this.state;
     const { _id } = this.props.theHabit;
 
-    habitService.createOne({ img, title, description }).then(newHabit => {
+    habitService.updateOne({ img, title, description }).then(newHabit => {
       console.log(newHabit);
     });
   };
@@ -46,6 +46,7 @@ class Edithabit extends Component {
 
     return (
       <div>
+      <button>Go back</button>
         <h1>Edit the habit</h1>
 
         <img style={{ width: 200, height: 'auto'}} src={this.state.img} alt=""/>
@@ -75,6 +76,7 @@ class Edithabit extends Component {
 
           <input type="submit" value="Save" />
         </form>
+        <button>Delete habit</button>
       </div>
     );
   }

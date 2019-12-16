@@ -43,6 +43,7 @@ class Addhabit extends Component {
 
     return (
       <div>
+      <button>Go back</button>
         <h1>Create a new habit</h1>
 
         <img style={{ width: 200, height: 'auto'}} src={this.state.img} alt=""/>

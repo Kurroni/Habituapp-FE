@@ -20,14 +20,14 @@ class Habit {
       .then(habitObj => habitObj.data) //DB response, habitObj but with ID
   }
 
-  //   updateOne (id) {
-  //     return this.habit
-  //     .post('/habit/', habitObj)  //what we send BE
-  //     .then(newHabit) //DB response, habitObj but with ID
-  //   }
+  updateOne (id, habitObj) {
+    return this.habit
+      .put('/:id', habitObj)  //what we send BE
+      .then(newHabit => newHabit.data) //DB response, habitObj but with ID
+    }
   //   deleteOne (id) {
   //     return this.habit
-  //     .post('/habit', habitObj)  //what we send BE
+  //     .post('/', habitObj)  //what we send BE
   //     .then(newHabit) //DB response, habitObj but with ID
   // }
 
