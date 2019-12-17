@@ -372,3 +372,63 @@ input#signup-btn, input#login-btn {
   text-decoration: none;
   
 }
+
+/*one habit page, single habit view*/
+/*this is onehabit component*/
+.onehabit-wrapper {
+  width: 60vw;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid #4c96d7;
+  border-radius: 5px;
+  color: white;
+}
+.onehabit-wrapper h3, .onehabit-wrapper p {
+  background: rgba(255, 255, 255, 0.2);
+  width: 100%;
+  text-align: center;
+  font-size: 2.2rem;
+} 
+.onehabit-wrapper p {
+  font-size: 1rem;
+}
+
+#onehabit-img {
+  width: 40vw;
+  height: 40vw;
+  object-fit: cover ;
+  padding: 1px 0;
+  }
+
+/*this is all page*/
+.single-habit-page {
+  background-color: #1c9e75;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.edit-btn {
+  position: absolute;
+  right: 2vh;
+  bottom: 2vh;
+  display: block;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 5px;
+  width: 75%;
+  max-width: 90px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid white;
+  border-radius: 8px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-out;
+}

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { withAuth } from '../lib/AuthProvider';
 import OneHabitComponent from './../components/OneHabitComponent'
+import CalendarComponent from './../components/CalendarComponent'
 
 class SingleHabit extends Component {
     render() {
@@ -9,10 +10,11 @@ class SingleHabit extends Component {
         console.log(habitId);
         
         return (
-            <div>
+            <div className="single-habit-page">
                <OneHabitComponent habitId={habitId}/>
+               <CalendarComponent/>
                <Link to={`/edit-habit/${habitId}`}>
-                   <button>Edit</button>
+                   <button className="edit-btn">Edit</button>
                </Link>
             </div>
             
