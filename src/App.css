@@ -80,7 +80,7 @@ color: #4c96d7;
   justify-content: center;
   align-items: center;
   }
-.signup-wrapper input, .login-wrapper input, { 
+.signup-wrapper input, .login-wrapper input { 
   font-size: 1.2em; 
   display: block;
   box-sizing: border-box;
@@ -152,11 +152,34 @@ input#signup-btn, input#login-btn {
    font-weight: bold;
  }
 
+ /*Today page w/o habits*/
+ h3.emptylist-header {
+  margin: 15vh auto 10vh;
+  padding: 5vh 3vh;
+   border: 1px solid #4c96d7;
+  height: 30vw;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  text-align: center;
+  letter-spacing: 1px;
+  }
+  .add-btn-empty {
+    font-size: 10rem;
+    color: white;
+    text-decoration: none;
+    margin: 3vh auto 3vh;
+    text-align: center;
+    padding-bottom: 9vh;
+  }
+
  /*Today page*/
  .habit-list {
    display: flex;
    flex-direction: column;
    justify-content: space-between;
+   background-color: #1c9e75;
+   height: 82vh;
  }
  .habit-tile {
    display: flex;
@@ -164,19 +187,34 @@ input#signup-btn, input#login-btn {
    align-items: center;
    border: 1px solid #4c96d7;
   height: 20vw;
- }
- .img-wrapper{
-   overflow: hidden;
- }
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  text-align: center;
+  letter-spacing: 1px;
+  min-width: 50vw;
+   }
+ 
  .habit-tile img {
    width: 20vw;
-         
+   height: 20vw;
+   object-fit: cover ;
+   padding: 1px 0;
+   border: 1px 0 1px solid #4c96d7;
    }
  .habit-tile a {
   width: 60vw;
   text-align: center;
-  color: #1c9e75;
+  color: white;
+  cursor: pointer;
 }
+.add-btn-full {
+  font-size: 4rem;
+  color: white;
+  text-decoration: none;
+  margin: 2vh auto;
+  text-align: center;
+ }
 
 /*Styles for checkbox*/
 /* Customize the label (the container) */
@@ -254,16 +292,11 @@ input#signup-btn, input#login-btn {
   position: absolute;
   left: 2vh;
   top: 2vh;
-  font-size: 1.6rem;
- 
+  font-size: 1.6rem; 
   box-sizing: border-box;
-  padding: 2px;
-  background: rgba(255, 255, 255, 0.2);
+  padding: 2px; 
   color: #1c9e75;
-  text-align: center;
-  text-decoration: none;
-  letter-spacing: 1px;
-}
+ }
 .edit-habit-wrapper {
   background-color: #1c9e75;
   height: 82vh;
@@ -284,7 +317,7 @@ input#signup-btn, input#login-btn {
   box-sizing: border-box;
   margin: 1vh auto 1vh 1vh;
   padding: 5px;
-  width: 90%;
+  width: 100%;
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid white;
   border-radius: 8px;
@@ -297,6 +330,14 @@ input#signup-btn, input#login-btn {
  .edit-habit-wrapper img {
    text-align: center;
  }
+ .input-img {
+  /* float: right; */
+}
+.img-edit {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
  input#save-btn {
   color: white;
   display: block;
@@ -316,7 +357,7 @@ input#signup-btn, input#login-btn {
 #delete-btn {
   position: absolute;
   right: 1vh;
-  bottom: 2vh;
+  top: 1vh;
   display: block;
   box-sizing: border-box;
   margin: 0 auto;

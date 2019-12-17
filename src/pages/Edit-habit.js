@@ -67,12 +67,14 @@ class Edithabit extends Component {
         
         <form onSubmit={this.handleFormSubmit} encType="multipart/form-data">
           <label>Photo:</label>
-          <input
+          <input className='input-img'
             type="file"
             name="photo"
             onChange={event => this.handlePhotoChange(event)}
           />
-          <img style={{ width: 200, height: 'auto'}} src={this.state.img} alt=""/>
+          <div className="img-edit">
+          <img style={{ width: 'auto', height: '140px'}} src={this.state.img} alt=""/>
+          </div>
 
           <label>Title:</label>
           <input
