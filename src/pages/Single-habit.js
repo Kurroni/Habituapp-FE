@@ -11,6 +11,7 @@ class SingleHabit extends Component {
         
         return (
             <div className="single-habit-page">
+            <Link to="/today" className="goback-btn"><i class="fas fa-arrow-circle-left"></i></Link>
                <OneHabitComponent habitId={habitId}/>
                <CalendarComponent/>
                <Link to={`/edit-habit/${habitId}`}>

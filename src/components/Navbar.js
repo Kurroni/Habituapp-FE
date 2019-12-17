@@ -12,7 +12,9 @@ class Navbar extends Component {
       
         {isLoggedin ? (
           <div className="logo-nav">
+          <Link to="/today">
           <img className="logo" src={logo} alt=""/>
+          </Link>
           <div className="username">
             <p>Username:</p>
             <p>{user.username}</p>

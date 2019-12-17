@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import cloudinaryService from "./../lib/cloudinary-service";
 import habitService from "./../lib/habit-service";
 import userService from "../lib/user-service";
@@ -42,36 +42,38 @@ class Addhabit extends Component {
     const { img, title, description } = this.state;
 
     return (
-      <div>
-      <button>Go back</button>
-        <h1>Create a new habit</h1>
+      <div className="edit-habit-wrapper">
+      <Link to="/today" className="goback-btn"><i class="fas fa-arrow-circle-left"></i></Link>
+        <h1>Create the habit</h1>
 
-        <img style={{ width: 200, height: 'auto'}} src={this.state.img} alt=""/>
+        
         <form onSubmit={this.handleFormSubmit} encType="multipart/form-data">
           <label>Photo:</label>
-          <input
+          <input className='input-img'
             type="file"
             name="photo"
             onChange={event => this.handlePhotoChange(event)}
           />
+          <div className="img-edit">
+          <img style={{ width: 'auto', height: '140px'}} src={this.state.img} alt=""/>
+          </div>
 
           <label>Title:</label>
           <input
             type="text"
             name="title"
-            value={title}
+            value={this.state.title}
             onChange={this.handleChange}
           />
 
           <label>Description:</label>
-          <input
-            type="text"
+          <textarea type="text"
             name="description"
-            value={description}
-            onChange={this.handleChange}
-          />
+            value={this.state.description}
+            onChange={this.handleChange} rows="7" cols="30">
+            </textarea>
 
-          <input type="submit" value="Create" />
+          <input id="save-btn" type="submit" value="Create" />
         </form>
       </div>
     );

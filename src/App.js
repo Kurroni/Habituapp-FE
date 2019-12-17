@@ -23,6 +23,7 @@ class App extends Component {
         <Navbar />
         
         <Switch>
+          <AnonRoute exact path="/" component={Signup} />
           <AnonRoute exact path="/signup" component={Signup} />
           <AnonRoute exact path="/login" component={Login} />
           <PrivateRoute exact path="/private" component={Private} />

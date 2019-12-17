@@ -179,7 +179,7 @@ input#signup-btn, input#login-btn {
    flex-direction: column;
    justify-content: space-between;
    background-color: #1c9e75;
-   height: 82vh;
+   min-height: 82vh;
  }
  .habit-tile {
    display: flex;

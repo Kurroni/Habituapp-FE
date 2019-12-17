@@ -61,7 +61,7 @@ class Edithabit extends Component {
 
     return (
       <div className="edit-habit-wrapper">
-      <Link className="goback-btn"><i class="fas fa-arrow-circle-left"></i></Link>
+      <Link to={`/single-habit/`}  className="goback-btn"><i class="fas fa-arrow-circle-left"></i></Link>
         <h1>Edit the habit</h1>
 
         
