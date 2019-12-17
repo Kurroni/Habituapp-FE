@@ -35,18 +35,30 @@ class Showhabits extends Component {
             listOfHabits.map( (habits) => {
             return (
               
-                <div key={habits._id} className='habit'>
+                <div className="habit-tile" key={habits._id} >
+                <div className="img-wrapper">
                 <img src={habits.img} alt=""/>
+                </div>
                 <Link to={`/single-habit/${habits._id}`}>
                    <h3>{habits.title}</h3>
                    </Link>
+                   <label class="container">
                   <input type="checkbox" checked/>
+                  <span class="checkmark"></span>
+                  </label>
+                  
                  {/* <p>{habits.description} </p> */}
                </div>
-             
+               
+               
                     )})
             : <h3>The list of habits is empty</h3>
           }
+          <Link to="add-habit">
+                    <button>
+                      +
+                    </button>
+                  </Link>
         </div>
         )
     }

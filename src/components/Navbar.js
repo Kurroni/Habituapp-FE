@@ -11,22 +11,20 @@ class Navbar extends Component {
 
       
         {isLoggedin ? (
-          <div>
-            <p>username: {user.username}</p>
-            <button onClick={logout}>Logout</button>
+          <div className="logo-nav">
+          <img className="logo" src={logo} alt=""/>
+          <div className="username">
+            <p>Username:</p>
+            <p>{user.username}</p>
+            
           </div>
+          <button className="logout-btn"onClick={logout}>Logout</button>
+          </div>
+          
         ) : (
           <div className="logo-nav">
           <img className="logo" src={logo} alt=""/>
-            {/* <Link to="/login">
-              {' '}
-              <button className="login-btn">Login</button>{' '}
-            </Link> */}
-            {/* <br /> */}
-            {/* <Link to="/signup">
-              {' '}
-              <button>Signup</button>{' '}
-            </Link> */}
+            
           </div>
         )}
       </div>

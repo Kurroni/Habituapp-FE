@@ -33,6 +33,7 @@ class Signup extends Component {
             type="text"
             name="username"
             placeholder="Username"
+            maxLength="12"
             value={username}
             onChange={this.handleChange}
             />

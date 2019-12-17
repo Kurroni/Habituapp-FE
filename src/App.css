@@ -5,6 +5,7 @@
   margin: 0;
   border: 0;
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
 .App {
@@ -28,7 +29,7 @@ img.logo {
 .logo-nav {
   position: inherit;
 }
-.login-btn, .signup-btn {
+.login-btn, .signup-btn, .logout-btn {
   position: absolute;
   right: 2vh;
   top: 11vh;
@@ -39,7 +40,7 @@ img.logo {
   width: 75%;
   max-width: 90px;
   background: rgba(255, 255, 255, 0.2);
-  border: 2px solid #1c9e75;;
+  border: 2px solid #1c9e75;
   border-radius: 8px;
   color: #1c9e75;
   text-align: center;
@@ -47,9 +48,13 @@ img.logo {
   letter-spacing: 1px;
   transition: all 0.3s ease-out;
 }
+.logout-btn {
+border-color: #4c96d7;
+color: #4c96d7;
+}
 
 /*Signup Form*/
-.signup-wrapper h1, .login-wrapper h1{
+.signup-wrapper h1, .login-wrapper h1, .edit-habit-wrapper h1{
   display: block;
   box-sizing: border-box;
   padding: 8px;
@@ -75,7 +80,7 @@ img.logo {
   justify-content: center;
   align-items: center;
   }
-.signup-wrapper input, .login-wrapper input { 
+.signup-wrapper input, .login-wrapper input, { 
   font-size: 1.2em; 
   display: block;
   box-sizing: border-box;
@@ -126,4 +131,203 @@ input#signup-btn, input#login-btn {
    font-size: 1rem;
  }
 
+ /*username Navbar loggedin*/
+ .username {
+   font-size: 1rem;
+  border-color: #4c96d7;
+  color: #4c96d7;
+  padding:4px;
+  position: absolute;
+  left: 1vh;
+  top: 8vh;
+  display: block;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 8px;  
+  text-align: center;
+  letter-spacing: 1px;
+ }
+ .username p+p {
+   font-size: 1.3rem;
+   font-weight: bold;
+ }
 
+ /*Today page*/
+ .habit-list {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+ }
+ .habit-tile {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   border: 1px solid #4c96d7;
+  height: 20vw;
+ }
+ .img-wrapper{
+   overflow: hidden;
+ }
+ .habit-tile img {
+   width: 20vw;
+         
+   }
+ .habit-tile a {
+  width: 60vw;
+  text-align: center;
+  color: #1c9e75;
+}
+
+/*Styles for checkbox*/
+/* Customize the label (the container) */
+.container {
+  display: block;
+  position: relative;
+  margin-bottom: 1em;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+  
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #4c96d7;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/*Edit habit*/
+.goback-btn {
+  position: absolute;
+  left: 2vh;
+  top: 2vh;
+  font-size: 1.6rem;
+ 
+  box-sizing: border-box;
+  padding: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #1c9e75;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+.edit-habit-wrapper {
+  background-color: #1c9e75;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.edit-habit-wrapper label {
+  color: white;
+  margin-top: 1vh;
+  font-size: 0.9rem;
+  display: block;
+}
+.edit-habit-wrapper input, .edit-habit-wrapper textarea { 
+  font-size: 0.8em; 
+  display: block;
+  box-sizing: border-box;
+  margin: 1vh auto 1vh 1vh;
+  padding: 5px;
+  width: 90%;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid white;
+  border-radius: 8px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 1px;
+  min-width: 40vw;
+ }
+ .edit-habit-wrapper img {
+   text-align: center;
+ }
+ input#save-btn {
+  color: white;
+  display: block;
+  box-sizing: border-box;
+  margin: 2vh auto 0;
+  padding: 4px;
+  max-width: 90px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid #4c96d7;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-out;
+}
+
+#delete-btn {
+  position: absolute;
+  right: 1vh;
+  bottom: 2vh;
+  display: block;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 5px;
+  width: 50%;
+  max-width: 90px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid #9e251c;
+  border-radius: 8px;
+  color: #9e251c;
+  text-align: center;
+  text-decoration: none;
+  
+}
