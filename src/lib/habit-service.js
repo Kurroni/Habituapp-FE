@@ -25,6 +25,18 @@ class Habit {
       .put(`/${id}`, habitObj)  //what we send BE
       .then(newHabit => newHabit.data) //DB response, habitObj but with ID
     }
+
+    updateDaysOfOne (id, days) {
+      return this.habit
+        .put(`/days/${id}`, {days})  //what we send BE
+        .then(habitUpdated => {
+          console.log('habitUpdated.data',habitUpdated.data);
+          return habitUpdated.data
+        }) //DB response, habitDays but with ID
+        .catch((err)=> console.log(err))
+        
+      }
+
     deleteOne (id, habitObj) {
       return this.habit
       .delete(`/${id}`, habitObj)  //what we send BE
