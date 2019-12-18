@@ -45,7 +45,7 @@ class OneHabitComponent extends Component {
             <img id="onehabit-img" src={this.state.img} alt=""/>
             <p id="onehabit-desc">{this.state.description}</p>     
         </div>
-        <button id="delete-btn">Delete habit</button>
+        
       </div>
     );
   }

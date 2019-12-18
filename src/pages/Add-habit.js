@@ -17,8 +17,11 @@ class Addhabit extends Component {
       const userId = this.props.user._id
       console.log(userId);
       
-    userService.updateTheHabits(userId, newHabit._id)
-        });
+      userService.updateTheHabits(userId, newHabit._id)
+    })
+    .then(()=> {
+      this.props.history.push("/today")
+    })
   };
 
   handlePhotoChange = event => {

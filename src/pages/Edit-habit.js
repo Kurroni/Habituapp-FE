@@ -34,9 +34,9 @@ class Edithabit extends Component {
     const { img, title, description } = this.state;
     const habitId = this.props.match.params.id;
 
-    habitService.updateOne(habitId, { img, title, description }).then(newHabit => {
-      console.log(newHabit);
-    });
+    habitService.updateOne(habitId, { img, title, description }).then(()=> {
+      this.props.history.push("/today")
+  })
   };
 
   handlePhotoChange = event => {
@@ -56,11 +56,22 @@ class Edithabit extends Component {
     this.setState({ [name]: value });
   };
 
+  deleteHabit = () => {
+    const habitId = this.props.match.params.id;
+    habitService.deleteOne(habitId)
+      .then(()=> {
+        this.props.history.push("/today")
+      })
+  };
+
   render() {
     const { img, title, description } = this.state;
 
     return (
       <div className="edit-habit-wrapper">
+      <button id="delete-btn" onClick={this.deleteHabit}>
+          Delete habit
+        </button>
       <Link to={`/single-habit/`}  className="goback-btn"><i class="fas fa-arrow-circle-left"></i></Link>
         <h1>Edit the habit</h1>
 
@@ -93,8 +104,7 @@ class Edithabit extends Component {
 
           <input id="save-btn" type="submit" value="Save" />
         </form>
-        <button id="delete-btn">Delete habit</button>
-      </div>
+              </div>
     );
   }
 }

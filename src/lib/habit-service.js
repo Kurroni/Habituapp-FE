@@ -25,10 +25,10 @@ class Habit {
       .put(`/${id}`, habitObj)  //what we send BE
       .then(newHabit => newHabit.data) //DB response, habitObj but with ID
     }
-    deleteOne (id) {
+    deleteOne (id, habitObj) {
       return this.habit
-      .post('/', habitObj)  //what we send BE
-      .then(newHabit) //DB response, habitObj but with ID
+      .delete(`/${id}`, habitObj)  //what we send BE
+      .then() //DB response, habitObj but with ID
   }
 
 }
