@@ -18,11 +18,11 @@ class Edithabit extends Component {
 
   componentDidMount(){
     const habitId = this.props.match.params.id;
-    console.log(habitId);
+    // console.log(habitId);
     
     habitService.getOne(habitId)
     .then((habitObj)=> {
-      console.log(habitObj);
+      // console.log(habitObj);
       
       const {img, title, description} = habitObj;
       this.setState({img, title, description})
@@ -40,15 +40,15 @@ class Edithabit extends Component {
   };
 
   handlePhotoChange = event => {
-    console.log(event.target.files[0]);
+    // console.log(event.target.files[0]);
     const file = event.target.files[0];
     const imageFile = new FormData();
     imageFile.append("photo", file);
     cloudinaryService.imageUpload(imageFile).then(imageUrl => {
-      console.log(imageUrl);
+      // console.log(imageUrl);
       this.setState({ img: imageUrl });
     });
-    console.log(this.state);
+    // console.log(this.state);
   };
 
   handleChange = event => {

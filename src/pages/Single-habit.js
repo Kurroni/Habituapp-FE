@@ -16,7 +16,7 @@ class SingleHabit extends Component {
 
   render() {
     const habitId = this.props.match.params.id;
-    console.log(habitId);
+    // console.log('habitId from single habit',habitId);
 
     return (
       <div className="single-habit-page">
@@ -27,7 +27,7 @@ class SingleHabit extends Component {
           <i class="fas fa-arrow-circle-left"></i>
         </Link>
         <OneHabitComponent habitId={habitId} />
-        <CalendarComponent />
+        {/* <CalendarComponent /> */}
         <Link to={`/edit-habit/${habitId}`}>
           <button className="edit-btn">Edit</button>
         </Link>

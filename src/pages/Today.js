@@ -74,6 +74,7 @@ class Showhabits extends Component {
             listOfHabits.length ? 
             <div>
             {listOfHabits.map( (habit, index) => {
+              {/* console.log('Habit ID from today',habit._id) */}
             return ( 
                 <div>          
                   <div className="habit-tile" key={habit._id} >

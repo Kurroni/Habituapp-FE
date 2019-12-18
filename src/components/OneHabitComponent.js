@@ -18,14 +18,14 @@ class OneHabitComponent extends Component {
   }
 
   componentDidMount(){
-      console.log(this.props);
+      // console.log(this.props);
       
     const habitId = this.props.habitId;
-    console.log(habitId);
+    // console.log(habitId);
     
     habitService.getOne(habitId)
     .then((habitObj)=> {
-      console.log(habitObj);
+      // console.log(habitObj);
       
       const {img, title, description} = habitObj;
       this.setState({img, title, description})
