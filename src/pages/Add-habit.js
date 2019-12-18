@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import cloudinaryService from "./../lib/cloudinary-service";
 import habitService from "./../lib/habit-service";
 import userService from "../lib/user-service";
@@ -21,9 +21,8 @@ class Addhabit extends Component {
     })
     .then(()=> {
       
-      
-      this.props.history.push("/today", this.state)
-    })
+       return window.location.href = "/today"
+      })
   };
 
   handlePhotoChange = event => {
@@ -44,8 +43,7 @@ class Addhabit extends Component {
   };
 
   render() {
-    console.log('history', this.props.history)
-    const { img, title, description } = this.state;
+       const { img, title, description } = this.state;
 
     return (
       <div className="edit-habit-wrapper">
