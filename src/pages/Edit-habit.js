@@ -66,13 +66,13 @@ class Edithabit extends Component {
 
   render() {
     const { img, title, description } = this.state;
-
+    const habitId = this.props.match.params.id;
     return (
       <div className="edit-habit-wrapper">
       <button id="delete-btn" onClick={this.deleteHabit}>
           Delete habit
         </button>
-      <Link to={`/single-habit/`}  className="goback-btn"><i class="fas fa-arrow-circle-left"></i></Link>
+      <Link to={`/single-habit/${habitId}`}  className="goback-btn"><i class="fas fa-arrow-circle-left"></i></Link>
         <h1>Edit the habit</h1>
 
         

@@ -24,8 +24,20 @@ class Showhabits extends Component {
     //  fetch the data from API befor initial render
     this.getAllHabits();  
   }
+   componentDidUpdate(){
+    const userId = this.props.user._id;
+    userService.showHabits(userId)
+    .then((user)=> {
+        console.log('USER UPDATE', user);
+        if(user.habits !== this.state.listOfHabits) {
+          this.setState({listOfHabits: user.habits})
+        }
+     })
+   }
 
     render() {
+      console.log(this.state);
+      
         const {listOfHabits} = this.state
         
         

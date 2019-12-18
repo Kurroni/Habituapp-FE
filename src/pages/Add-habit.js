@@ -20,7 +20,9 @@ class Addhabit extends Component {
       userService.updateTheHabits(userId, newHabit._id)
     })
     .then(()=> {
-      this.props.history.push("/today")
+      
+      
+      this.props.history.push("/today", this.state)
     })
   };
 
@@ -42,6 +44,7 @@ class Addhabit extends Component {
   };
 
   render() {
+    console.log('history', this.props.history)
     const { img, title, description } = this.state;
 
     return (
