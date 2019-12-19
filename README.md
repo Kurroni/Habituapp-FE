@@ -24,18 +24,18 @@ Habituapp is a great way to stay disciplined and commited when you start a new h
 
 ## User Stories
 
--  **404:** As an anon/user I can see a 404 page if I try to reach a page that does not exist so that I know it's my fault
 -  **Signup:** As an anon I can sign up in the platform so that I can start creating or joining team
 -  **Login:** As a user I can login to the platform so that I can see my profileś features
 -  **Logout:** As a user I can logout from the platform so no one else can use it
 -  **Create New Habit** As a user I want to create new habit
 -  **See my habits** As a user I can see my habits as a daily to-do list, habits can be marked as DONE
 -  **Edit my habits** As a user I can edit my habits to update them due to my learnings
--  **See a habit with its streak** As a user I want to see a specific habit and my Streak in keeping it, to mesure my progress and to keep motivated
+-  **See a habit with its total 'DONE' number of days** As a user I want to see a specific habit and my how many days I've done it, to mesure my progress and to keep motivated
 
 
 
 ## Backlog
+- Add calendar to see marked 'DONE' days.
 - Make habits option: weekly, monthly.
 - Add categories: e.i. mind, health, family, sport, diet, self-development etc.
 - Other users as a supporters with comment option
@@ -46,13 +46,12 @@ Habituapp is a great way to stay disciplined and commited when you start a new h
 ## Routes
 | Path | Component | Permissions | Behavior | 
 |------|--------|--| -------|
- `/signup` | HomePageComponent | public | Sign up form (navigates to NewHabit)and link to login |
+ `/signup` | HomePageComponent | public | Sign up form (navigates to Today page - create new habit) and link to login |
 | `/login` | LoginPageComponent | anon only | login form, link to signup navigating to HomePage, navigate to TodayPage after login |
 | `/today` | TodayPageComponent | user only | homepage |
 | `/add-habit` | AddHabitPageComponent | user only | CreateHabitPage - form to add the new habit by title and navigate to TodayPage after creation |
-| `/habits/edit/:id` | AddHabitPageComponent | user only | EditForm for the habit by title and navigate to TodayPage after save |
+| `/habits/edit/:id` | EditHabitPageComponent | user only | EditForm for the habit by title and navigate to TodayPage after save |
 | `/habits/:id` | TodayPageComponent | user only | view of the single habit, link to EditForm |
-| `**` | NotFoundPageComponent | public | 
 
 
 ## Components
@@ -105,15 +104,18 @@ Habituapp is a great way to stay disciplined and commited when you start a new h
 
 - User Service
   - user.getOne(id)
-  - user.update(id, {habits})
+  - user.updateTheHabits (id, habitsId)
+  - user.showHabits (id)
   
 - Habit Service
-  - habit.createOne(data)
-  - habit.imageUpload(file)
-  *(- habit.getAll()         //by user-id)
+  - habit.createOne(habitObj)
   - habit.getOne(id)
-  - habit.updateOne(id, data) 
-  - habit.deleteOne(id)
+  - habit.updateOne (id, habitObj) 
+  - updateDaysOfOne (id, days)
+  - habit.deleteOne(id, habitObj)
+  
+- Cloudinary Service
+  - cloudinary.imageUpload(imageFile)
 
 
 # Server
@@ -139,7 +141,7 @@ habit={
   img: String,
   title: String,
   description: String,
-  days: [{date:Date, done: Boolean}]
+  days: [String]
 }
 
 ```
@@ -148,12 +150,12 @@ habit={
 
 ### Front-end routes
 
-- ('/signup') : signup page     // /auth/signup
+- ('/signup') : signup page
 - ('/login') : login page
 - ('/today') : home page if loged in
 - ('/add-habit') : form page to create new habit
-- ('/habits/:id') : Single habit page with statistics
-- ('/habits/edit/:id') : Edit single habit page
+- ('single-habit/:id') : Single habit page with statistics
+- ('/edit-habit/:id') : Edit single habit page
 
 ## API Endpoints (backend routes)
 
@@ -165,10 +167,10 @@ habit={
 | POST        | `/auth/login`                 | {username, password}         | 200            | 401          | Checks if fields not empty (422), if user exists (404), and if password matches (404), then stores user in session |
 | POST        | `/auth/logout`                | (empty)                      | 204            | 400          | Logs out the user                                            |
 | GET         | `/habits`                |                              |                | 400          | Show all user's habits                                         |
-| GET         | `/habits/:id`            | {id}                         |                |              | Show specific tournament                                     |
+| GET         | `/habits/:id`            | {id}                         |                |              | Show specific habit                                     |
 | POST        | `/habits` | {}                           | 201            | 400          | Create and save a new habit                             |
-| PUT         | `/habits/edit/:id`       | {image, title, description}           | 200            | 400          | edit tournament                                              |
-| DELETE      | `/habits/delete/:id`     | {id}                         | 201            | 400          | delete habit                                            |
+| PUT         | `/habits/edit/:id`       | {image, title, description}           | 200            | 400          | edit habit                                              |
+| DELETE      | `/habits/:id`     | {id}                         | 201            | 400          | delete habit                                            |
 
 <br>
 
