@@ -11,7 +11,7 @@ class TodayEmpty extends Component {
         
       
             <Link to="add-habit">
-            <p className="add-btn-empty"><i class="fas fa-plus-circle"></i></p>
+            <p className="add-btn-empty"><i className="fas fa-plus-circle"></i></p>
             </Link>
         </div>
        )

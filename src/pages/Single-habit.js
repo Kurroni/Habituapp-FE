@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
 import OneHabitComponent from "./../components/OneHabitComponent";
-import CalendarComponent from "./../components/CalendarComponent";
 import habitService from "./../lib/habit-service";
 
 class SingleHabit extends Component {
@@ -24,10 +23,10 @@ class SingleHabit extends Component {
           Delete habit
         </button>
         <Link to="/today" className="goback-btn">
-          <i class="fas fa-arrow-circle-left"></i>
+          <i className="fas fa-arrow-circle-left"></i>
         </Link>
         <OneHabitComponent habitId={habitId} />
-        {/* <CalendarComponent /> */}
+        
         <Link to={`/edit-habit/${habitId}`}>
           <button className="edit-btn">Edit</button>
         </Link>

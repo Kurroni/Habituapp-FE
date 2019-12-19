@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { withAuth } from '../lib/AuthProvider';
-import SignupBackground from './../img/Success.jpg'
 
 class Signup extends Component {
   state = { username: '', email:'', password: '' };

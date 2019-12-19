@@ -9,7 +9,6 @@
 }
 
 .App {
-  
   height: 100vh;
 }
 /*Navbar*/
@@ -101,7 +100,7 @@ color: #4c96d7;
   color: white;
 }
 input#signup-btn, input#login-btn {
-  color: #1c9e75;
+  color: white;
   display: block;
   box-sizing: border-box;
   margin: 0 auto;
@@ -330,10 +329,7 @@ input#signup-btn, input#login-btn {
  .edit-habit-wrapper img {
    text-align: center;
  }
- .input-img {
-  /* float: right; */
-}
-.img-edit {
+ .img-edit {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -376,24 +372,27 @@ input#signup-btn, input#login-btn {
 /*one habit page, single habit view*/
 /*this is onehabit component*/
 .onehabit-wrapper {
+  margin-top: 2rem;
   width: 60vw;
   height: 40vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  border: 1px solid #4c96d7;
-  border-radius: 5px;
+  border-radius: 8px;
   color: white;
 }
 .onehabit-wrapper h3, .onehabit-wrapper p {
   background: rgba(255, 255, 255, 0.2);
   width: 100%;
   text-align: center;
-  font-size: 2.2rem;
+  font-size: 2.4rem;
+  border-radius: 8px;
+  margin: 0.6rem;
+  padding: 0.3rem;
 } 
 .onehabit-wrapper p {
-  font-size: 1rem;
+  font-size: 1.6rem;
 }
 
 #onehabit-img {
@@ -431,4 +430,48 @@ input#signup-btn, input#login-btn {
   text-decoration: none;
   letter-spacing: 1px;
   transition: all 0.3s ease-out;
+}
+
+@media (min-width: 600px) {
+  
+  .onehabit-wrapper {
+    width: 60vw;
+    height: 50vh;
+    
+  }
+  #onehabit-img {
+    height: 60vw;
+    }
+}
+@media (orientation: landscape) {
+
+  .login-btn, .signup-btn, .logout-btn {
+    position: absolute;
+    right: 2vh;
+    top: 8vh;
+  }
+  .signup-wrapper input, .login-wrapper input { 
+    font-size: 1em; 
+    margin: 2.8vh auto;
+    padding: 5px;
+    min-width: 40vw;
+   }
+   .username {
+   left: 20vh;
+   top: 3vh;
+   }
+   #delete-btn {
+    right: 2vh;
+    top: 20vh;
+  }
+  .img-edit {
+    position: absolute;
+    top: 40vh;
+    left: 5vw;
+  }
+  .edit-habit-wrapper h1{
+    font-size: 1.5rem;
+    line-height: 1.6rem;
+    margin-bottom: 3px;
+  }
 }

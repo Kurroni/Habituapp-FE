@@ -3,7 +3,6 @@ import { withAuth } from "../lib/AuthProvider";
 import { Link } from "react-router-dom";
 import cloudinaryService from "./../lib/cloudinary-service";
 import habitService from "./../lib/habit-service";
-import userService from "./../lib/user-service";
 
 
 class Edithabit extends Component {
@@ -65,7 +64,7 @@ class Edithabit extends Component {
   };
 
   render() {
-    const { img, title, description } = this.state;
+    const { img } = this.state;
     const habitId = this.props.match.params.id;
     return (
       <div className="edit-habit-wrapper">
