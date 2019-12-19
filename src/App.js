@@ -3,7 +3,6 @@ import { Switch } from 'react-router-dom';
 
 import Signup from './pages/Signup';
 import Login from './pages/Login';
-import Private from './pages/Private';
 import Navbar from './components/Navbar';
 
 import AnonRoute from './components/AnonRoute';
@@ -26,8 +25,7 @@ class App extends Component {
           <AnonRoute exact path="/" component={Signup} />
           <AnonRoute exact path="/signup" component={Signup} />
           <AnonRoute exact path="/login" component={Login} />
-          <PrivateRoute exact path="/private" component={Private} />
-          <PrivateRoute exact path="/add-habit" component={AddHabit}/>
+           <PrivateRoute exact path="/add-habit" component={AddHabit}/>
           <PrivateRoute exact path="/today" component={Showhabits}/>
           <PrivateRoute exact path="/edit-habit/:id" component={EditHabit}/>
           <PrivateRoute exact path="/single-habit/:id" component={SingleHabit}/>

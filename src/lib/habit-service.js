@@ -15,8 +15,6 @@ class Habit {
   }
 
   getOne (id) {
-    // console.log('habit id from habit service', id);
-    
     return this.habit
       .get(`/${id}`)  //what we send BE
       .then(habitObj => habitObj.data) //DB response, habitObj but with ID
@@ -26,21 +24,19 @@ class Habit {
     return this.habit
       .put(`/${id}`, habitObj)  //what we send BE
       .then(newHabit => newHabit.data) //DB response, habitObj but with ID
-    }
+  }
 
-    updateDaysOfOne (id, days) {
-      return this.habit
-        .put(`/days/${id}`, {days})  //what we send BE
-        .then(habitUpdated => {
-          // console.log('habitUpdated.data',habitUpdated.data);
-          return habitUpdated.data
+  updateDaysOfOne (id, days) {
+    return this.habit
+      .put(`/days/${id}`, {days})  //what we send BE
+      .then(habitUpdated => {
+        return habitUpdated.data
         }) //DB response, habitDays but with ID
         .catch((err)=> console.log(err))
-        
-      }
+  }
 
-    deleteOne (id, habitObj) {
-      return this.habit
+  deleteOne (id, habitObj) {
+    return this.habit
       .delete(`/${id}`, habitObj)  //what we send BE
       .then() //DB response, habitObj but with ID
   }
