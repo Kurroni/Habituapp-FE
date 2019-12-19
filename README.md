@@ -183,10 +183,10 @@ https://trello.com/b/Z14IYCXN/habituapp
 
 ### Git
 URls for the project repo and deploy
-[Link Repo Server]
-[Link Repo Client]
-[Link Deploy]
+Link Repo Server: https://github.com/Kurroni/Habituapp-BE
+Link Repo Client: https://github.com/Kurroni/Habituapp-FE
+Deploy: https://habitu-app.herokuapp.com/
 
 
 ### Slides
-URls for the project presentation (slides)
+Slides presenattion: https://docs.google.com/presentation/d/16JZiIQ717qT3g7tbBadSUrgWdzsP66ZhhGfznUKn5FU/edit?usp=sharing
