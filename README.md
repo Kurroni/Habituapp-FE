@@ -17,6 +17,8 @@ The next features to add to the tool will be some interaction between users and 
 
 Habituapp is a great way to stay disciplined and commited when you start a new habit.
 
+I built it by myself with HTML, ES6, React, Express, Node.js, HTTP, CRUD, Auth.
+
 
 [Link Deploy](https://habituapp.herokuapp.com/)
 
