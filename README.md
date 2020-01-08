@@ -9,15 +9,13 @@ It's easy to get motivated but it's hard to stay disciplined.
 Habituapp is a perfect tool that helps you to build habits that stick. To create behavior chain that is harder to break and will lead you to achieve your personal long-term goals.
 Micro gains, small wins. That's the idea.
 
-I built it by myself with React, Node.js and MongoDB as a final project for the Ironhack’s bootcamp.
-
 You create your small daily habits to learn consistent routines. Then you track them and got your every day to-do-list. All you have to do is maintaine the Streak - the longer one, the better.
 
 The next features to add to the tool will be some interaction between users and option to motivate each other.
 
 Habituapp is a great way to stay disciplined and commited when you start a new habit.
 
-I built it by myself with HTML, ES6, React, Express, Node.js, HTTP, CRUD, Auth.
+I built it by myself with HTML, ES6, React, Express, Node.js, HTTP, CRUD, Auth as a final project for the Ironhack’s bootcamp.
 
 
 [Link Deploy](https://habituapp.herokuapp.com/)
